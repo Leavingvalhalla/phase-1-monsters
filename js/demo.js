@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const moreMonsters = document.getElementById('forward');
   moreMonsters.addEventListener('click', (e) => {
-    fetch('http://localhost:3000/monsters?_limit=50', {
+    fetch('http://localhost:3000/monsters?_page=2', {
       headers: {
         'Content-Type': 'application/json',
         // prettier-ignore
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        for (let i = 0; i < 50; i++) {
+        for (let i = 50; i < 100; i++) {
           const monsterContainer = document.getElementById('monster-container');
           const monsterDiv = document.createElement('div');
           const monsterName = document.createElement('h2');
